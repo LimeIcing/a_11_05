@@ -1,3 +1,8 @@
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
 public class Main05 {
 
     /*
@@ -8,6 +13,31 @@ public class Main05 {
      */
 
     public static void main(String[] args) {
+        LinkedList<Integer> a = new LinkedList<>();
+        a.add(-14);
+        a.add(-8);
+        a.add(-10);
+        a.add(-19);
+        a.add(-13);
+        a.add(-2);
+        a.add(-11);
+        a.add(4);
+        a.add(9);
+        a.add(-2);
+        System.out.println(a);
+        sortAndRemoveDuplicates(a);
+        System.out.println(a);
+    }
 
+    public static void sortAndRemoveDuplicates(LinkedList<Integer> list) {
+        TreeSet<Integer> holder = new TreeSet<>(list);
+
+        while (!list.isEmpty()) {
+            list.remove(0);
+        }
+
+        for (int n:holder) {
+            list.add(n);
+        }
     }
 }
